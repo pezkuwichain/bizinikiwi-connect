@@ -1,0 +1,274 @@
+{
+  "name": "@bizinikiwi/connect-known-chains",
+  "version": "1.10.3",
+  "description": "Bizinikiwi-connect well known chain specifications",
+  "author": "Parity Team <admin@parity.io>",
+  "license": "GPL-3.0-only",
+  "type": "module",
+  "main": "./dist/commonjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/commonjs/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": {
+        "@bizinikiwi-connect/source": "./src/index.ts",
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/index.d.ts",
+        "default": "./dist/commonjs/index.js"
+      }
+    },
+    "./pezkuwi": {
+      "import": {
+        "@bizinikiwi-connect/source": "./src/specs/pezkuwi.ts",
+        "types": "./dist/esm/specs/pezkuwi.d.ts",
+        "default": "./dist/esm/specs/pezkuwi.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/specs/pezkuwi.d.ts",
+        "default": "./dist/commonjs/specs/pezkuwi.js"
+      }
+    },
+    "./ksmcc3": {
+      "import": {
+        "@bizinikiwi-connect/source": "./src/specs/ksmcc3.ts",
+        "types": "./dist/esm/specs/ksmcc3.d.ts",
+        "default": "./dist/esm/specs/ksmcc3.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/specs/ksmcc3.d.ts",
+        "default": "./dist/commonjs/specs/ksmcc3.js"
+      }
+    },
+    "./zagros2": {
+      "import": {
+        "@bizinikiwi-connect/source": "./src/specs/zagros2.ts",
+        "types": "./dist/esm/specs/zagros2.d.ts",
+        "default": "./dist/esm/specs/zagros2.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/specs/zagros2.d.ts",
+        "default": "./dist/commonjs/specs/zagros2.js"
+      }
+    },
+    "./pezkuwichain_v2_2": {
+      "import": {
+        "@bizinikiwi-connect/source": "./src/specs/pezkuwichain_v2_2.ts",
+        "types": "./dist/esm/specs/pezkuwichain_v2_2.d.ts",
+        "default": "./dist/esm/specs/pezkuwichain_v2_2.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/specs/pezkuwichain_v2_2.d.ts",
+        "default": "./dist/commonjs/specs/pezkuwichain_v2_2.js"
+      }
+    },
+    "./ksmcc3_asset_hub": {
+      "import": {
+        "@bizinikiwi-connect/source": "./src/specs/ksmcc3_asset_hub.ts",
+        "types": "./dist/esm/specs/ksmcc3_asset_hub.d.ts",
+        "default": "./dist/esm/specs/ksmcc3_asset_hub.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/specs/ksmcc3_asset_hub.d.ts",
+        "default": "./dist/commonjs/specs/ksmcc3_asset_hub.js"
+      }
+    },
+    "./ksmcc3_bridge_hub": {
+      "import": {
+        "@bizinikiwi-connect/source": "./src/specs/ksmcc3_bridge_hub.ts",
+        "types": "./dist/esm/specs/ksmcc3_bridge_hub.d.ts",
+        "default": "./dist/esm/specs/ksmcc3_bridge_hub.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/specs/ksmcc3_bridge_hub.d.ts",
+        "default": "./dist/commonjs/specs/ksmcc3_bridge_hub.js"
+      }
+    },
+    "./pezkuwi_asset_hub": {
+      "import": {
+        "@bizinikiwi-connect/source": "./src/specs/pezkuwi_asset_hub.ts",
+        "types": "./dist/esm/specs/pezkuwi_asset_hub.d.ts",
+        "default": "./dist/esm/specs/pezkuwi_asset_hub.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/specs/pezkuwi_asset_hub.d.ts",
+        "default": "./dist/commonjs/specs/pezkuwi_asset_hub.js"
+      }
+    },
+    "./pezkuwi_bridge_hub": {
+      "import": {
+        "@bizinikiwi-connect/source": "./src/specs/pezkuwi_bridge_hub.ts",
+        "types": "./dist/esm/specs/pezkuwi_bridge_hub.d.ts",
+        "default": "./dist/esm/specs/pezkuwi_bridge_hub.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/specs/pezkuwi_bridge_hub.d.ts",
+        "default": "./dist/commonjs/specs/pezkuwi_bridge_hub.js"
+      }
+    },
+    "./pezkuwi_collectives": {
+      "import": {
+        "@bizinikiwi-connect/source": "./src/specs/pezkuwi_collectives.ts",
+        "types": "./dist/esm/specs/pezkuwi_collectives.d.ts",
+        "default": "./dist/esm/specs/pezkuwi_collectives.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/specs/pezkuwi_collectives.d.ts",
+        "default": "./dist/commonjs/specs/pezkuwi_collectives.js"
+      }
+    },
+    "./pezkuwichain_v2_2_asset_hub": {
+      "import": {
+        "@bizinikiwi-connect/source": "./src/specs/pezkuwichain_v2_2_asset_hub.ts",
+        "types": "./dist/esm/specs/pezkuwichain_v2_2_asset_hub.d.ts",
+        "default": "./dist/esm/specs/pezkuwichain_v2_2_asset_hub.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/specs/pezkuwichain_v2_2_asset_hub.d.ts",
+        "default": "./dist/commonjs/specs/pezkuwichain_v2_2_asset_hub.js"
+      }
+    },
+    "./pezkuwichain_v2_2_bridge_hub": {
+      "import": {
+        "@bizinikiwi-connect/source": "./src/specs/pezkuwichain_v2_2_bridge_hub.ts",
+        "types": "./dist/esm/specs/pezkuwichain_v2_2_bridge_hub.d.ts",
+        "default": "./dist/esm/specs/pezkuwichain_v2_2_bridge_hub.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/specs/pezkuwichain_v2_2_bridge_hub.d.ts",
+        "default": "./dist/commonjs/specs/pezkuwichain_v2_2_bridge_hub.js"
+      }
+    },
+    "./zagros2_asset_hub": {
+      "import": {
+        "@bizinikiwi-connect/source": "./src/specs/zagros2_asset_hub.ts",
+        "types": "./dist/esm/specs/zagros2_asset_hub.d.ts",
+        "default": "./dist/esm/specs/zagros2_asset_hub.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/specs/zagros2_asset_hub.d.ts",
+        "default": "./dist/commonjs/specs/zagros2_asset_hub.js"
+      }
+    },
+    "./zagros2_bridge_hub": {
+      "import": {
+        "@bizinikiwi-connect/source": "./src/specs/zagros2_bridge_hub.ts",
+        "types": "./dist/esm/specs/zagros2_bridge_hub.d.ts",
+        "default": "./dist/esm/specs/zagros2_bridge_hub.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/specs/zagros2_bridge_hub.d.ts",
+        "default": "./dist/commonjs/specs/zagros2_bridge_hub.js"
+      }
+    },
+    "./zagros2_collectives": {
+      "import": {
+        "@bizinikiwi-connect/source": "./src/specs/zagros2_collectives.ts",
+        "types": "./dist/esm/specs/zagros2_collectives.d.ts",
+        "default": "./dist/esm/specs/zagros2_collectives.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/specs/zagros2_collectives.d.ts",
+        "default": "./dist/commonjs/specs/zagros2_collectives.js"
+      }
+    },
+    "./paseo": {
+      "import": {
+        "@bizinikiwi-connect/source": "./src/specs/paseo.ts",
+        "types": "./dist/esm/specs/paseo.d.ts",
+        "default": "./dist/esm/specs/paseo.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/specs/paseo.d.ts",
+        "default": "./dist/commonjs/specs/paseo.js"
+      }
+    },
+    "./pezkuwi_people": {
+      "import": {
+        "@bizinikiwi-connect/source": "./src/specs/pezkuwi_people.ts",
+        "types": "./dist/esm/specs/pezkuwi_people.d.ts",
+        "default": "./dist/esm/specs/pezkuwi_people.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/specs/pezkuwi_people.d.ts",
+        "default": "./dist/commonjs/specs/pezkuwi_people.js"
+      }
+    },
+    "./zagros_people": {
+      "import": {
+        "@bizinikiwi-connect/source": "./src/specs/zagros_people.ts",
+        "types": "./dist/esm/specs/zagros_people.d.ts",
+        "default": "./dist/esm/specs/zagros_people.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/specs/zagros_people.d.ts",
+        "default": "./dist/commonjs/specs/zagros_people.js"
+      }
+    },
+    "./ksmcc3_people": {
+      "import": {
+        "@bizinikiwi-connect/source": "./src/specs/ksmcc3_people.ts",
+        "types": "./dist/esm/specs/ksmcc3_people.d.ts",
+        "default": "./dist/esm/specs/ksmcc3_people.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/specs/ksmcc3_people.d.ts",
+        "default": "./dist/commonjs/specs/ksmcc3_people.js"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "tshy": {
+    "project": "./tsconfig.build.json",
+    "exports": {
+      "./package.json": "./package.json",
+      ".": "./src/index.ts",
+      "./pezkuwi": "./src/specs/pezkuwi.ts",
+      "./ksmcc3": "./src/specs/ksmcc3.ts",
+      "./zagros2": "./src/specs/zagros2.ts",
+      "./pezkuwichain_v2_2": "./src/specs/pezkuwichain_v2_2.ts",
+      "./ksmcc3_asset_hub": "./src/specs/ksmcc3_asset_hub.ts",
+      "./ksmcc3_bridge_hub": "./src/specs/ksmcc3_bridge_hub.ts",
+      "./pezkuwi_asset_hub": "./src/specs/pezkuwi_asset_hub.ts",
+      "./pezkuwi_bridge_hub": "./src/specs/pezkuwi_bridge_hub.ts",
+      "./pezkuwi_collectives": "./src/specs/pezkuwi_collectives.ts",
+      "./pezkuwichain_v2_2_asset_hub": "./src/specs/pezkuwichain_v2_2_asset_hub.ts",
+      "./pezkuwichain_v2_2_bridge_hub": "./src/specs/pezkuwichain_v2_2_bridge_hub.ts",
+      "./zagros2_asset_hub": "./src/specs/zagros2_asset_hub.ts",
+      "./zagros2_bridge_hub": "./src/specs/zagros2_bridge_hub.ts",
+      "./zagros2_collectives": "./src/specs/zagros2_collectives.ts",
+      "./paseo": "./src/specs/paseo.ts",
+      "./pezkuwi_people": "./src/specs/pezkuwi_people.ts",
+      "./zagros_people": "./src/specs/zagros_people.ts",
+      "./ksmcc3_people": "./src/specs/ksmcc3_people.ts"
+    },
+    "sourceDialects": [
+      "@bizinikiwi-connect/source"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pezkuwichain/bizinikiwi-connect.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pezkuwichain/bizinikiwi-connect/issues"
+  },
+  "homepage": "https://github.com/pezkuwichain/bizinikiwi-connect#readme",
+  "scripts": {
+    "prepare": "corepack pnpm turbo build",
+    "build-js-specs": "node scripts/build-js-specs.js",
+    "deep-clean": "npm run clean && rimraf dist node_modules",
+    "clean": "rimraf dist .tshy .tshy-build",
+    "build": "pnpm clean && pnpm build-js-specs && tshy",
+    "lint": "eslint . --ext .js,.ts"
+  },
+  "devDependencies": {
+    "typescript": "5.6.2",
+    "vitest": "^2.1.9"
+  }
+}

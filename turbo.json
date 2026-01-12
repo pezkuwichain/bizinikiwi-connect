@@ -1,0 +1,30 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": [
+    "tsconfig.base.json",
+    "tsconfig.build.json",
+    ".prettierrc"
+  ],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        "tsconfig.json",
+        "tsconfig.build.json",
+        "tsup.config.ts",
+        "package.json"
+      ],
+      "outputs": ["dist/**", ".turbo/**", ".tshy", ".tshy-build"]
+    },
+    "test": {
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "dependsOn": ["build"]
+    },
+    "//#lint": {
+      "dependsOn": []
+    }
+  }
+}

@@ -1,0 +1,30 @@
+version: 2
+
+updates:
+  - package-ecosystem: npm
+    directory: "/"
+    labels:
+    - "automerge"
+    schedule:
+      interval: daily
+    groups:
+      polkadot-api:
+        patterns:
+          - "@polkadot-api/*"
+          - "polkadot-api"
+      polkadot-labs:
+        patterns:
+          - "@polkadot-labs/*"
+      pjs:
+        patterns:
+          - "@polkadot/*"
+      radix-ui:
+        patterns:
+          - "@radix-ui/*"
+
+  - package-ecosystem: github-actions
+    directory: '/'
+    labels:
+    - "automerge"
+    schedule:
+      interval: weekly

@@ -1,0 +1,10 @@
+{
+  "name": "Bizinikiwi Connect",
+  "entryPoints": ["packages/*"],
+  "entryPointStrategy": "packages",
+  "out": "docs",
+  "theme": "default",
+  "exclude": ["**/*.test.ts"],
+  "excludeExternals": false,
+  "excludePrivate": true
+}

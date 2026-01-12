@@ -1,0 +1,93 @@
+{
+  "name": "@bizinikiwi/connect",
+  "version": "2.1.9",
+  "description": "Bizinikiwi-connect to Smoldot clients. Using either bizinikiwi extension with predefined clients or an internal smoldot client based on chainSpecs provided.",
+  "author": "Parity Team <admin@parity.io>",
+  "license": "GPL-3.0-only",
+  "publishConfig": {
+    "access": "public"
+  },
+  "type": "module",
+  "main": "./dist/commonjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/commonjs/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "browser": {
+        "types": "./dist/browser/index.d.ts",
+        "default": "./dist/browser/index.js"
+      },
+      "import": {
+        "@bizinikiwi-connect/source": "./src/index.ts",
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/index.d.ts",
+        "default": "./dist/commonjs/index.js"
+      }
+    },
+    "./worker": {
+      "browser": {
+        "types": "./dist/browser/worker.d.ts",
+        "default": "./dist/browser/worker.js"
+      },
+      "import": {
+        "@bizinikiwi-connect/source": "./src/worker.ts",
+        "types": "./dist/esm/worker.d.ts",
+        "default": "./dist/esm/worker.js"
+      },
+      "require": {
+        "types": "./dist/commonjs/worker.d.ts",
+        "default": "./dist/commonjs/worker.js"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "tshy": {
+    "project": "./tsconfig.build.json",
+    "exports": {
+      "./package.json": "./package.json",
+      ".": "./src/index.ts",
+      "./worker": "./src/worker.ts"
+    },
+    "esmDialects": [
+      "browser"
+    ],
+    "sourceDialects": [
+      "@bizinikiwi-connect/source"
+    ],
+    "exclude": [
+      "src/**/*.test.ts"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pezkuwichain/bizinikiwi-connect.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pezkuwichain/bizinikiwi-connect/issues"
+  },
+  "homepage": "https://github.com/pezkuwichain/bizinikiwi-connect#readme",
+  "scripts": {
+    "prepare": "corepack pnpm turbo build",
+    "deep-clean": "npm run clean && rimraf dist node_modules",
+    "clean": "rimraf dist .tshy .tshy-build",
+    "build": "npm run clean && tshy",
+    "test": "vitest run --dangerouslyIgnoreUnhandledErrors --environment jsdom",
+    "lint": "eslint . --ext .js,.ts"
+  },
+  "dependencies": {
+    "@bizinikiwi/connect-extension-protocol": "^2.2.2",
+    "@bizinikiwi/connect-known-chains": "^1.10.3",
+    "@bizinikiwi/smoldot-discovery": "^2.0.3",
+    "smoldot": "^2.0.34"
+  },
+  "devDependencies": {
+    "typescript": "5.6.2",
+    "vitest": "^2.1.9"
+  }
+}

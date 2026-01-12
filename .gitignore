@@ -1,0 +1,25 @@
+node_modules
+.DS_Store
+yarn-error.log
+dist
+# testing
+coverage
+_site
+*.tsbuildinfo
+polkadot
+polkadot-parachain*
+init.sh
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
+.turbo
+.vscode
+packages/connect/src/connector/specs/js
+substrate-connect_*-source-code.zip
+
+.tshy
+.tshy-build
