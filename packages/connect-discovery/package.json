@@ -5,7 +5,7 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pezkuwichain/bizinikiwi-connect.git"
+    "url": "git+https://git.pezkuwichain.io/pezkuwichain/bizinikiwi-connect.git"
   },
   "license": "MIT",
   "main": "./dist/commonjs/index.js",

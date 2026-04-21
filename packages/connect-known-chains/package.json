@@ -253,12 +253,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pezkuwichain/bizinikiwi-connect.git"
+    "url": "git+https://git.pezkuwichain.io/pezkuwichain/bizinikiwi-connect.git"
   },
   "bugs": {
-    "url": "https://github.com/pezkuwichain/bizinikiwi-connect/issues"
+    "url": "https://git.pezkuwichain.io/pezkuwichain/bizinikiwi-connect/issues"
   },
-  "homepage": "https://github.com/pezkuwichain/bizinikiwi-connect#readme",
+  "homepage": "https://git.pezkuwichain.io/pezkuwichain/bizinikiwi-connect#readme",
   "scripts": {
     "prepare": "corepack pnpm turbo build",
     "build-js-specs": "node scripts/build-js-specs.js",
