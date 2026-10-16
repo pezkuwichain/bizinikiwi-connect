@@ -9,14 +9,12 @@
   Bumps the npm_and_yarn group with 1 update: [vitest](https://github.com/vitest-dev/vitest/tree/HEAD/packages/vitest).
 
   Updates `vitest` from 2.1.4 to 2.1.9
-
   - [Release notes](https://github.com/vitest-dev/vitest/releases)
   - [Commits](https://github.com/vitest-dev/vitest/commits/v2.1.9/packages/vitest)
 
   ***
 
   updated-dependencies:
-
   - dependency-name: vitest
     dependency-type: direct:development
     dependency-group: npm_and_yarn
@@ -34,14 +32,12 @@
 - 09f1c22: chore(deps-dev): bump vitest from 2.0.5 to 2.1.4
 
   Bumps [vitest](https://github.com/vitest-dev/vitest/tree/HEAD/packages/vitest) from 2.0.5 to 2.1.4.
-
   - [Release notes](https://github.com/vitest-dev/vitest/releases)
   - [Commits](https://github.com/vitest-dev/vitest/commits/v2.1.4/packages/vitest)
 
   ***
 
   updated-dependencies:
-
   - dependency-name: vitest
     dependency-type: direct:development
     update-type: version-update:semver-minor
@@ -57,7 +53,6 @@
 ### Major Changes
 
 - e2a5cef: ## Breaking Changes
-
   - Modified `addChain` and `addWellKnownChain` methods:
     - Now accept a single `options` object parameter instead of separate `jsonRpcCallback` and `databaseContent` parameters
     - The `jsonRpcCallback` is now passed as `options.jsonRpcCallback`
@@ -66,13 +61,11 @@
   - Updated peer dependency for `@bizinikiwi/smoldot-discovery` to "^2"
 
   ## New Features
-
   - Added new methods to the Chain interface to conform with smoldot's interface:
     - `nextJsonRpcResponse`: Returns a promise that resolves with the next JSON-RPC response
     - `jsonRpcResponses`: Returns an async iterable of JSON-RPC responses
 
   ## Other Changes
-
   - Updated internal implementation to use Effect for streaming JSON RPC responses in a Queue.
   - Updated error handling to include `QueueFullError`.
 
@@ -120,7 +113,6 @@
 - 4123a5e: ## Breaking Changes
 
   ### Change Summary
-
   - Removes the connector function and extracts its into a different package.
   - Remove `@bizinikiwi/light-client-extension-helpers` dependency.
   - Re-export `@bizinikiwi/discovery` types
@@ -178,7 +170,6 @@
   ```
 
   ### Additional Notes
-
   - The connector `make` function now accepts two parameters instead of one. The `lightClientProvider` is now the first parameter.
 
 ### Minor Changes
