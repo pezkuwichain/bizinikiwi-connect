@@ -70,7 +70,8 @@
     "overrides": {
       "@bizinikiwi/connect": "workspace:^",
       "smoldot": "^2.0.34",
-      "shell-quote": ">=1.8.4"
+      "shell-quote": ">=1.8.4",
+      "tinypool": ">=2.1.2"
     }
   }
 }
