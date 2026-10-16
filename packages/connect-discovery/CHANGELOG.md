@@ -9,14 +9,12 @@
   Bumps the npm_and_yarn group with 1 update: [vitest](https://github.com/vitest-dev/vitest/tree/HEAD/packages/vitest).
 
   Updates `vitest` from 2.1.4 to 2.1.9
-
   - [Release notes](https://github.com/vitest-dev/vitest/releases)
   - [Commits](https://github.com/vitest-dev/vitest/commits/v2.1.9/packages/vitest)
 
   ***
 
   updated-dependencies:
-
   - dependency-name: vitest
     dependency-type: direct:development
     dependency-group: npm_and_yarn
@@ -34,14 +32,12 @@
 - 09f1c22: chore(deps-dev): bump vitest from 2.0.5 to 2.1.4
 
   Bumps [vitest](https://github.com/vitest-dev/vitest/tree/HEAD/packages/vitest) from 2.0.5 to 2.1.4.
-
   - [Release notes](https://github.com/vitest-dev/vitest/releases)
   - [Commits](https://github.com/vitest-dev/vitest/commits/v2.1.4/packages/vitest)
 
   ***
 
   updated-dependencies:
-
   - dependency-name: vitest
     dependency-type: direct:development
     update-type: version-update:semver-minor
