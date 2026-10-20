@@ -6,6 +6,11 @@ on:
   pull_request:
     branches: [ main, master ]
 
+
+# Read-only token: no step writes through GITHUB_TOKEN.
+permissions:
+  contents: read
+
 jobs:
   build-and-test:
     runs-on: ubuntu-latest

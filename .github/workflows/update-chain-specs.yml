@@ -5,6 +5,11 @@ on:
     - cron: '0 8 * * *'  # every day at 8am
   workflow_dispatch: # allow triggering through the UI
 
+
+# Writes go through a separate bot token or app token; GITHUB_TOKEN stays read-only.
+permissions:
+  contents: read
+
 jobs:
   download-spec:
     runs-on: ubuntu-latest
