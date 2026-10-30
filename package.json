@@ -54,7 +54,7 @@
     "jsdom": "^26.0.0",
     "lint-staged": "^15.4.3",
     "nodemon": "^3.1.4",
-    "prettier": "^3.3.3",
+    "prettier": "^3.9.10",
     "rimraf": "^6.0.1",
     "tshy": "^3.0.2",
     "tslib": "^2.6.2",
