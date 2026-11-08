@@ -79,7 +79,7 @@
       "brace-expansion@>=2 <3": "^2.1.7",
       "browserslist": "^4.28.7",
       "flatted": "^3.4.2",
-      "follow-redirects": "^1.16.0",
+      "follow-redirects": "^1.16.2",
       "js-yaml@<4": "^3.15.2",
       "js-yaml@>=4": "^4.3.2",
       "linkify-it": "^5.0.2",
