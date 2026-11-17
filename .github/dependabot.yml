@@ -2,6 +2,8 @@ version: 2
 
 updates:
   - package-ecosystem: npm
+    cooldown:
+      default-days: 14
     directory: "/"
     labels:
     - "automerge"
@@ -23,6 +25,8 @@ updates:
           - "@radix-ui/*"
 
   - package-ecosystem: github-actions
+    cooldown:
+      default-days: 14
     directory: '/'
     labels:
     - "automerge"
