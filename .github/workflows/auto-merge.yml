@@ -20,9 +20,60 @@ jobs:
         uses: dependabot/fetch-metadata@v2.3.0
         with:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
+      - name: Supply-chain age gate (new versions must be >= 14 days old)
+        id: age
+        shell: python
+        env:
+          MIN_AGE_DAYS: "14"
+          DEPS: ${{ steps.dependabot-metadata.outputs.updated-dependencies-json }}
+        run: |
+          # Supply-chain age gate: every version this PR introduces must have been
+          # published at least MIN_AGE_DAYS ago. Anything that cannot be read (the
+          # dependency list, an ecosystem we cannot query, a registry error) counts as
+          # too young, so the gate fails closed and the PR stays open for a human.
+          # Dependabot's `cooldown` covers version updates; security updates bypass it,
+          # which is why this check also lives here.
+          import json, os, urllib.parse, urllib.request
+          from datetime import datetime, timezone
+
+          def published(eco, name, ver):
+              if eco == "npm_and_yarn":
+                  url = "https://registry.npmjs.org/" + urllib.parse.quote(name, safe="")
+                  return json.load(urllib.request.urlopen(url, timeout=30))["time"][ver]
+              if eco == "cargo":
+                  req = urllib.request.Request(
+                      f"https://crates.io/api/v1/crates/{urllib.parse.quote(name)}/{urllib.parse.quote(ver)}",
+                      headers={"User-Agent": "dependabot-age-gate"})
+                  return json.load(urllib.request.urlopen(req, timeout=30))["version"]["created_at"]
+              raise LookupError(f"no publish-date lookup for ecosystem {eco}")
+
+          min_days = int(os.environ["MIN_AGE_DAYS"])
+          now = datetime.now(timezone.utc)
+          blocked = []
+          try:
+              deps = json.loads(os.environ["DEPS"])
+              if not deps:
+                  raise ValueError("empty dependency list")
+          except Exception as e:
+              deps, blocked = [], [f"dependency-list ({e})"]
+          for d in deps:
+              tag = f"{d.get('dependencyName')}@{d.get('newVersion')}"
+              try:
+                  ts = published(d["packageEcosystem"], d["dependencyName"], d["newVersion"])
+                  age = (now - datetime.fromisoformat(ts.replace("Z", "+00:00"))).days
+                  print(f"{tag} published {ts} ({age}d)")
+                  if age < min_days:
+                      blocked.append(f"{tag} ({age}d)")
+              except Exception as e:
+                  blocked.append(f"{tag} (age unknown: {e})")
+          if blocked:
+              print(f"::notice::not queued for auto-merge, younger than {min_days} days or unverifiable: " + ", ".join(blocked))
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              f.write(f"young={'true' if blocked else 'false'}\n")
+
       # Here the PR gets approved.
       - name: Approve a PR
-        if: ${{ !contains(steps.dependabot-metadata.outputs.dependency-names, 'smoldot') && !contains(steps.dependabot-metadata.outputs.dependency-names, '@polkadot-api') && steps.dependabot-metadata.outputs.update-type == 'version-update:semver-patch' }}
+        if: ${{ steps.age.outputs.young == 'false' && !contains(steps.dependabot-metadata.outputs.dependency-names, 'smoldot') && !contains(steps.dependabot-metadata.outputs.dependency-names, '@polkadot-api') && steps.dependabot-metadata.outputs.update-type == 'version-update:semver-patch' }}
         run: gh pr review --approve "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
@@ -30,7 +81,7 @@ jobs:
       # Finally, this sets the PR to allow auto-merging for patch and minor
       # updates if all checks pass
       - name: Enable auto-merge for Dependabot PRs
-        if: ${{ !contains(steps.dependabot-metadata.outputs.dependency-names, 'smoldot') && !contains(steps.dependabot-metadata.outputs.dependency-names, '@polkadot-api') && steps.dependabot-metadata.outputs.update-type == 'version-update:semver-patch' }}
+        if: ${{ steps.age.outputs.young == 'false' && !contains(steps.dependabot-metadata.outputs.dependency-names, 'smoldot') && !contains(steps.dependabot-metadata.outputs.dependency-names, '@polkadot-api') && steps.dependabot-metadata.outputs.update-type == 'version-update:semver-patch' }}
         run: gh pr merge --auto --squash "$PR_URL"
         env:
           PR_URL: ${{ github.event.pull_request.html_url }}
